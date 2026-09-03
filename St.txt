@@ -328,3 +328,43 @@ Failed: 0
 Pass percentage: 100%
  
 
+
+
+
+
+
+#include <stdio.h>
+
+int main()
+{
+    int a, b, c;
+
+    printf("Enter three sides of the triangle: ");
+    scanf("%d %d %d", &a, &b, &c);
+
+    /* Check valid range */
+    if (a < 1 || b < 1 || c < 1 || a > 10 || b > 10 || c > 10)
+    {
+        printf("Invalid input\n");
+    }
+    /* Check triangle condition */
+    else if (a + b <= c || a + c <= b || b + c <= a)
+    {
+        printf("Not a Triangle\n");
+    }
+    /* Check triangle type */
+    else if (a == b && b == c)
+    {
+        printf("Equilateral Triangle\n");
+    }
+    else if (a == b || b == c || a == c)
+    {
+        printf("Isosceles Triangle\n");
+    }
+    else
+    {
+        printf("Scalene Triangle\n");
+    }
+
+    return 0;
+}
